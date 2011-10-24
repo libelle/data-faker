@@ -1,0 +1,7 @@
+Plausible User Data Generator
+
+Generates fake user data in CSV or SQL. Has a lot of flexible
+features that are adaptable to whatever fake user data
+requirements you may have.
+
+run with the --help flag
