@@ -234,6 +234,7 @@ for ($i=0;$i<$theArgs{'count'};$i++)
     foreach $totaltype (@outfmt)
         {
 	    $outval = '';
+	    $suppress = 0;
 		if (substr($totaltype,0,1) eq '~')
 			{
 			$totaltypestr = substr($totaltype,1);
@@ -341,6 +342,7 @@ for ($i=0;$i<$theArgs{'count'};$i++)
 	         elsif ($type eq '!')
 	            {
 	            $zip = '';
+	            $suppress = 1;
 	            }
 	         elsif ($type eq 'c')
 	            {
@@ -532,7 +534,10 @@ for ($i=0;$i<$theArgs{'count'};$i++)
 	            $outval .= $type;
 	            }
 			}
-		push (@out,$outval);
+		if (! $suppress)
+		    {
+		    push (@out,$outval);
+	        }
         }
    if ($theArgs{'sql'})
       {
